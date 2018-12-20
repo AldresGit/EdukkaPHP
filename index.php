@@ -1,6 +1,6 @@
 <?php
 
-require 'C:\wamp64\www\edukka\Slim\Slim.php'; //require '.././Slim/Slim.php';
+require '/app/Slim/Slim.php'; //require '.././Slim/Slim.php';
 require_once 'user-service.php';
 require_once 'class-service.php';
 require_once 'game-service.php';
