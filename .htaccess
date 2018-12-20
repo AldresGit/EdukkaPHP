@@ -1,1 +1,5 @@
-
+<IfModule mod_rewrite.c>
+   RewriteEngine on
+   RewriteRule ^$ edukka2.herokuapp.com/     [L]
+   RewriteRule (.*) edukka2.herokuapp.com/$1 [L]
+</IfModule>
