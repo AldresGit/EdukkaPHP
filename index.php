@@ -5,7 +5,7 @@ require_once 'user-service.php';
 require_once 'class-service.php';
 require_once 'game-service.php';
 require_once 'quiz-service.php';
-/*
+
 \Slim\Slim::registerAutoloader();
 
 $app = new \Slim\Slim();
@@ -68,7 +68,5 @@ function getDB() {
     $dbConnection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     return $dbConnection;
 }
-*/
 
-echo "Hola buenas tardes";
 ?>
