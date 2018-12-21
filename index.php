@@ -58,10 +58,10 @@ $app->post('/quiz/delete', 'deleteQuiz');
 $app->run();
 
 function getDB() {
-    $dbhost = 'localhost';
-    $dbuser = 'root';       //$dbuser = 'id5255892_root';
-    $dbpass = '';           //$dbpass = 'k4zGDiZJ6EqCKnkDOhAH';
-    $dbname = 'edukka';     //$dbname = 'id5255892_edukka';
+    $dbhost = 'sql7.freesqldatabase.com';
+    $dbuser = 'sql7271013';       //$dbuser = 'id5255892_root';
+    $dbpass = 'S1GazReZ7M';           //$dbpass = 'k4zGDiZJ6EqCKnkDOhAH';
+    $dbname = 'sql7271013';     //$dbname = 'id5255892_edukka';
 
     $mysql_conn_string = "mysql:host=$dbhost;dbname=$dbname;charset=utf8mb4";
     $dbConnection = new PDO($mysql_conn_string, $dbuser, $dbpass);
