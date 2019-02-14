@@ -70,10 +70,10 @@ $app->post('/room/getquizzesbyid', 'getQuizzesById');
 $app->run();
 
 function getDB() {
-    $dbhost = 'localhost';
-    $dbuser = 'root';       //$dbuser = 'id5255892_root';
-    $dbpass = '';           //$dbpass = 'k4zGDiZJ6EqCKnkDOhAH';
-    $dbname = 'edukka';     //$dbname = 'id5255892_edukka';
+    $dbhost = 'bzi56eihrhec7ehmqmbt-mysql.services.clever-cloud.com';
+    $dbuser = 'uup09mc4h8d4wecw3cnx';       //$dbuser = 'id5255892_root';
+    $dbpass = 'LTZlyCv8R6Lhw05T70vC';           //$dbpass = 'k4zGDiZJ6EqCKnkDOhAH';
+    $dbname = 'bzi56eihrhec7ehmqmbt';     //$dbname = 'id5255892_edukka';
 
     $mysql_conn_string = "mysql:host=$dbhost;dbname=$dbname;charset=utf8mb4";
     $dbConnection = new PDO($mysql_conn_string, $dbuser, $dbpass);
