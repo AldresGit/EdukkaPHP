@@ -5,7 +5,7 @@ require_once 'user-service.php';
 require_once 'class-service.php';
 require_once 'game-service.php';
 require_once 'quiz-service.php';
-
+require_once 'multiplayer-game-service.php';
 \Slim\Slim::registerAutoloader();
 
 $app = new \Slim\Slim();
@@ -55,13 +55,25 @@ $app->post('/quiz/new', 'createQuiz');
 $app->post('/quiz/edit', 'updateQuiz');
 $app->post('/quiz/delete', 'deleteQuiz');
 
+// Multiplayer Game Service
+$app->get('/room/:id', 'getRoom');
+$app->get('/rooms/:id', 'searchRoom');
+$app->get('/room/randomquizzes/:id', 'getRandomQuizzes');
+$app->post('/room/new', 'createRoom');
+$app->post('/room/join', 'joinRoom');
+$app->post('/room/leave', 'leaveRoom');
+$app->post('/room/adorn', 'adornRoom');
+$app->post('/room/delete', 'deleteRoom');
+$app->post('/room/updatequizzes', 'updateQuizzes');
+$app->post('/room/getquizzesbyid', 'getQuizzesById');
+
 $app->run();
 
 function getDB() {
-    $dbhost = 'sql7.freesqldatabase.com';
-    $dbuser = 'sql7271013';       //$dbuser = 'id5255892_root';
-    $dbpass = 'S1GazReZ7M';           //$dbpass = 'k4zGDiZJ6EqCKnkDOhAH';
-    $dbname = 'sql7271013';     //$dbname = 'id5255892_edukka';
+    $dbhost = 'localhost';
+    $dbuser = 'root';       //$dbuser = 'id5255892_root';
+    $dbpass = '';           //$dbpass = 'k4zGDiZJ6EqCKnkDOhAH';
+    $dbname = 'edukka';     //$dbname = 'id5255892_edukka';
 
     $mysql_conn_string = "mysql:host=$dbhost;dbname=$dbname;charset=utf8mb4";
     $dbConnection = new PDO($mysql_conn_string, $dbuser, $dbpass);

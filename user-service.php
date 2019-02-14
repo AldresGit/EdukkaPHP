@@ -116,12 +116,31 @@ function signUp() {
         echo json_encode($e->getMessage());
     }
 }
-
+/*
 function updateUserScore() {
     $app = \Slim\Slim::getInstance();
     $score = $app->request()->post('score');
     $id = $app->request()->post('id');
     $sql = 'UPDATE user SET score = ? WHERE id = ?';
+    try {
+        $db = getDB();
+        $stmt = $db->prepare($sql);
+        $stmt->bindValue(1, $score);
+        $stmt->bindValue(2, $id);
+        $stmt->execute();
+        $db = null;
+        echo getUser($id);
+    } catch(PDOException $e) {
+        echo json_encode($e->getMessage());
+    }
+}
+*/
+
+function updateUserScore() {
+    $app = \Slim\Slim::getInstance();
+    $score = $app->request()->post('score');
+    $id = $app->request()->post('id');
+    $sql = 'UPDATE user u SET u.score = u.score + ? WHERE id = ?';
     try {
         $db = getDB();
         $stmt = $db->prepare($sql);
